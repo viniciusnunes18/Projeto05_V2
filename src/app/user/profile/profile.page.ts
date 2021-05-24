@@ -28,7 +28,7 @@ export class ProfilePage implements OnInit {
       (userData) => {
         if (userData) {
           this.itemDoc = afs.doc<any>(`register/${userData.uid}`);
-          this.item = this.itemDoc.valueChanges();
+          this.item = this.itemDoc.valueChanges({idField: 'id'});
         }
       }
     );

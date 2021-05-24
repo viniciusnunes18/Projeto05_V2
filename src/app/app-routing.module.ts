@@ -64,6 +64,10 @@ const routes: Routes = [
     // Só pode ser vista se logado
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
+  {
+    path: 'user/edit/:id',
+    loadChildren: () => import('./user/edit/edit.module').then( m => m.EditPageModule)
+  },
 
   // Página de erro 404
   // '**' TEM QUE SER SEMPRE A ÚLTIMA ROTA
@@ -71,6 +75,7 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then(m => m.E404PageModule)
   }
+
 ];
 
 @NgModule({
