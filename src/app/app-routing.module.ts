@@ -21,7 +21,7 @@ const routes: Routes = [
   // Rota para a página inicial
   {
     path: '',
-    redirectTo: 'register',
+    redirectTo: 'user/login',
     pathMatch: 'full'
   },
 

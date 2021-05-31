@@ -66,15 +66,17 @@ export class ContactsPage implements OnInit {
         ]),
       ],
 
-      // Campo 'E-mail' (email)
-      email: [
+      // Campo 'telephone' (telephone)
+      telephone: [
         '',
         Validators.compose([
           Validators.required,
-          Validators.email, // Valida somente se for um e-mail válido
+          Validators.pattern(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/),
           removeSpaces
         ]),
       ],
+
+
 
       // Campo 'Assunto' (subject)
       subject: [
